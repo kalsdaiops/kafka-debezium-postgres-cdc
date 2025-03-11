@@ -11,8 +11,10 @@
     "database.server.name": "dbserver1",
     "table.include.list": "public.users",
     "plugin.name": "pgoutput",
-    "topic.prefix": "postgres-",
+    "topic.prefix": "postgres",
     "slot.name": "debezium_slot",
-    "publication.name": "dbz_publication"
+    "publication.name": "dbz_publication",
+    "database.history.kafka.bootstrap.servers": "kafka:9092",
+    "database.history.kafka.topic": "schema-changes.postgres"
   }
 }
