@@ -1,11 +1,10 @@
-# kafka-debezium-postgres-docker
 # Kafka + Debezium + PostgreSQL CDC
 
-Overview
+# Overview
 
 This project demonstrates Change Data Capture (CDC) using PostgreSQL, Kafka, and Debezium. It captures database changes in real-time and streams them to Kafka topics.
 
-Technologies Used
+# Technologies Used
 
 PostgreSQL - Database
 
@@ -21,28 +20,28 @@ Docker Compose - Container orchestration
 
 Setup and Running the Project
 
-Prerequisites
+# Prerequisites
 
 Ensure you have Docker and Docker Compose installed.
 
-Steps
+# Steps
 
 Clone the repository:
 
 git clone https://github.com/your-repo/kafka-debezium-postgres.git
 cd kafka-debezium-postgres
 
-Start the services:
+# Start the services:
 
 docker-compose up -d
 
-Register the Debezium Connector:
+# Register the Debezium Connector:
 
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" \
 --data @config/debezium-connector.json \
 http://localhost:8083/connectors
 
-Verify Data Flow:
+# Verify Data Flow:
 
 docker exec -it kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic postgres.public.users --from-beginning
 
@@ -52,7 +51,7 @@ Any INSERT, UPDATE, or DELETE in public.users will be published to Kafka.
 
 The consumer can listen to the topic and process changes in real-time.
 
-Cleanup
+# Cleanup
 
 To stop and remove containers:
 
